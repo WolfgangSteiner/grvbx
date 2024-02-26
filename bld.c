@@ -15,6 +15,8 @@ int main(int argc, char** argv) {
     grvbld_target_add_src(grvbx, "src/main.c");
     grvbld_target_link_library(grvbx, "grv");
     grvbld_target_link_library(grvbx, "grvgfx");
+    grvbld_target_link_library(grvbx, "SDL2");
+    grvbx->run_after_build = true;
     grvbld_build_target(config, grvbx);
 
     return 0;
